@@ -6,8 +6,8 @@ namespace WebApplication1;
 // 1. IL CONTESTO DEL DATABASE
 public class AppDbContext : DbContext
 {
-    public DbSet<Bill> Bills { get; set; }
-    public DbSet<BillType> BillTypes { get; set; }
+    public DbSet<Tassa> Tasse { get; set; }
+    public DbSet<Tipologia> Tipologie { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -15,18 +15,18 @@ public class AppDbContext : DbContext
     }
 }
 
-// 2. LA CLASSE BILL
-public class Bill
+// 2. LA CLASSE TASSA
+public class Tassa
 {
     public int Id { get; set; }
     public double Prezzo { get; set; }
     public DateTime Data { get; set; }
     public bool Pagata { get; set; }
-    public int BillTypeId { get; set; }
+    public int TipologiaId { get; set; }
 }
 
-// 3. LA CLASSE BILLTYPE
-public class BillType
+// 3. LA CLASSE TIPOLIGIA
+public class Tipologia
 {
     public int Id { get; set; }
     public string Tipo { get; set; } = string.Empty;
